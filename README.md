@@ -46,12 +46,12 @@ $$d = \frac{T \cdot (P_{NL} - P_{DE})}{0.01 \cdot C \cdot (P_{NL} + P_{DE})}$$
 
 ### Voorbeeld:
 - Tank: **50L**
-- Prijsverschil: **€0.45** (€2.30 vs €1.85)
+- Prijsverschil: **€0.30** (€2.02 vs €1.72)
 - Verbruik: **7.0 L/100km**
 
-$$d = \frac{50 \cdot 0.45}{0.01 \cdot 7.0 \cdot (2.30 + 1.85)} = \frac{22.5}{0.2905} \approx \mathbf{77.5 \text{ km}}$$
+$$d = \frac{50 \cdot 0.30}{0.01 \cdot 7.0 \cdot (2.02 + 1.72)} = \frac{15}{0.2618} \approx \mathbf{57.3 \text{ km}}$$
 
-In dit realistischere scenario loont het dus om tot 77 kilometer van de grens naar Duitsland te rijden (voorheen was dit 86 km).
+In dit scenario loont het dus om tot 57 kilometer van de grens naar Duitsland te rijden.
 
 ## 🛠️ Technologie
 - **HTML5/CSS3**: Voor de interface en sliders.
