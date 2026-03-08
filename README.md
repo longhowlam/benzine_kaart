@@ -2,6 +2,8 @@
 
 Een interactieve web-applicatie die visualiseert vanaf welke locaties in Nederland het financieel voordelig is om de grens over te steken naar Duitsland voor een tankbeurt.
 
+Hier is de kaart 'live':  https://longhowlam.github.io/benzine_besparing.html
+
 ![Benzine Kaart Demo](kaart.png)
 
 ## 🚀 Gebruik
