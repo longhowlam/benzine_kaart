@@ -22,6 +22,8 @@ De kaart berekent de maximale afstand $d$ (enkele reis) die je kunt rijden naar 
 - $P_{NL}$: Benzineprijs in Nederland (€/L)
 - $P_{DE}$: Benzineprijs in Duitsland (€/L)
 - $C$: Verbruik van de auto (L/100km)
+- $W$: Uurloon (€/u) (bijv. €25/u)
+- $S$: Gemiddelde snelheid naar de grens (90 km/u)
 - $d$: Afstand naar de grens in kilometers
 
 ### Logica:
@@ -33,27 +35,29 @@ $$Kosten_{NL} = Kosten_{DE} + Kosten_{Rit}$$
    $$T \cdot P_{NL}$$
 2. **Kosten DE**: Je vult de hele tank tegen de Duitse prijs.
    $$T \cdot P_{DE}$$
-3. **Kosten Rit**: Je rijdt $d$ kilometer naar Duitsland met Nederlandse brandstof en $d$ kilometer terug met de goedkopere Duitse brandstof.
+3. **Kosten Rit**: De totale kosten van de rit bestaan uit brandstofverbruik en de waarde van de tijd (uurloon).
    $$\text{Verbruik per km} = \frac{C}{100} = 0.01 \cdot C$$
-   $$\text{Kosten heenreis} = d \cdot (0.01 \cdot C) \cdot P_{NL}$$
-   $$\text{Kosten terugreis} = d \cdot (0.01 \cdot C) \cdot P_{DE}$$
-   $$Kosten_{Rit} = 0.01 \cdot d \cdot C \cdot (P_{NL} + P_{DE})$$
+   $$\text{Brandstof heen/terug} = d \cdot (0.01 \cdot C) \cdot (P_{NL} + P_{DE})$$
+   $$\text{Tijdskosten} = \text{reistijd} \cdot W = \frac{2 \cdot d}{S} \cdot W$$
+   $$Kosten_{Rit} = d \cdot [0.01 \cdot C \cdot (P_{NL} + P_{DE}) + \frac{2 \cdot W}{S}]$$
 
 ### De vergelijking oplossen voor $d$:
 $$T \cdot P_{NL} = T \cdot P_{DE} + 0.01 \cdot d \cdot C \cdot (P_{NL} + P_{DE})$$
 
-$$T \cdot (P_{NL} - P_{DE}) = 0.01 \cdot d \cdot C \cdot (P_{NL} + P_{DE})$$
+$$T \cdot (P_{NL} - P_{DE}) = d \cdot [0.01 \cdot C \cdot (P_{NL} + P_{DE}) + \frac{2 \cdot W}{S}]$$
 
-$$d = \frac{T \cdot (P_{NL} - P_{DE})}{0.01 \cdot C \cdot (P_{NL} + P_{DE})}$$
+$$d = \frac{T \cdot (P_{NL} - P_{DE})}{0.01 \cdot C \cdot (P_{NL} + P_{DE}) + \frac{2 \cdot W}{S}}$$
 
 ### Voorbeeld:
 - Tank: **50L**
 - Prijsverschil: **€0.30** (€2.02 vs €1.72)
 - Verbruik: **7.0 L/100km**
+- Uurloon: **€25/u**
+- Snelheid: **90 km/u**
 
-$$d = \frac{50 \cdot 0.30}{0.01 \cdot 7.0 \cdot (2.02 + 1.72)} = \frac{15}{0.2618} \approx \mathbf{57.3 \text{ km}}$$
+$$d = \frac{50 \cdot 0.30}{0.01 \cdot 7.0 \cdot (2.02 + 1.72) + \frac{2 \cdot 25}{90}} = \frac{15}{0.2618 + 0.5556} \approx \mathbf{18.4 \text{ km}}$$
 
-In dit scenario loont het dus om tot 57 kilometer van de grens naar Duitsland te rijden.
+In dit scenario loont het dus om tot 18 kilometer van de grens naar Duitsland te rijden. Zonder uurloon was dit 57 km geweest!
 
 ## 🛠️ Technologie
 - **HTML5/CSS3**: Voor de interface en sliders.
