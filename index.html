@@ -121,7 +121,7 @@
     <div id="map"></div>
 
     <div class="controls">
-        <h1>Refuel Savings Map</h1>
+        <h1>Rij voorzichtig naar Duitsland</h1>
 
         <div class="control-group">
             <label for="tank">Tankinhoud (L):</label>
@@ -152,6 +152,13 @@
             <div class="slider-container">
                 <input type="range" id="consumption" min="3" max="15" step="0.1" value="7.0">
                 <span class="value-display" id="consumption-val">7.0</span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>Maximale afstand <i>d</i>:</label>
+            <div class="slider-container">
+                <span class="value-display" id="distance-val" style="flex-grow: 1; text-align: center; background: var(--success); color: white; font-size: 1.1rem; padding: 8px;">0.0 km</span>
             </div>
         </div>
 
@@ -197,7 +204,8 @@
                 tankVal: document.getElementById('tank-val'),
                 priceNlVal: document.getElementById('price-nl-val'),
                 priceDeVal: document.getElementById('price-de-val'),
-                consumptionVal: document.getElementById('consumption-val')
+                consumptionVal: document.getElementById('consumption-val'),
+                distanceVal: document.getElementById('distance-val')
             };
 
             // 4. Logic
@@ -220,6 +228,8 @@
                 if (pNl > pDe) {
                     distance = (tank * (pNl - pDe)) / (0.01 * cons * (pNl + pDe));
                 }
+
+                elements.distanceVal.textContent = distance.toFixed(1) + ' km';
 
                 savingsLayer.clearLayers();
                 if (distance > 0.1) {
