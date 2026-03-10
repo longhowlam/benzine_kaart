@@ -66,4 +66,4 @@ In dit scenario loont het dus om tot 18 kilometer van de grens naar Duitsland te
 - **GeoJSON**: Voor de grenscoördinaten van Nederland.
 
 ## ⚖️ Licentie
-Dit project is vrij te gebruiken voor persoonlijke doeleinden. Let op: de berekening gaat uit van een 'lege' tank bij aankomst bij de grens en houdt geen rekening met slijtage aan de auto of de waarde van je tijd.
+Dit project is vrij te gebruiken voor persoonlijke doeleinden. Let op: de berekening gaat uit van een 'lege' tank bij aankomst bij de grens en houdt geen rekening met slijtage aan de auto of het voordeel van extra goedkoop boodschappen doen in duitsland.
